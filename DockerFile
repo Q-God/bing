@@ -1,0 +1,5 @@
+FROM java:8
+EXPOSE 8808
+ARG JAR_FILE
+ADD target/${JAR_FILE} /bing.jar
+ENTRYPOINT ["java", "-jar","/bing.jar"]

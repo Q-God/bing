@@ -1,0 +1,24 @@
+server:
+  port: 8888
+
+spring:
+  r2dbc:
+    url: r2dbcs:mysql://localhost:3306/bing?characterEncoding=UTF-8&sslMode=DISABLED
+    username: root
+    password: root
+  data:
+    r2dbc:
+      repositories:
+        enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+logging:
+  level:
+    io.r2dbc.mysql.QUERY: warn
+    org.springframework.data.r2dbc: debug
+  file:
+    path: /var/app/sefa/logs
+    name: bing.log
+#��־����
